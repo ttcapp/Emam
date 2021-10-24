@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slide_drawer/slide_drawer.dart';
 
 String avatarSrc= "https://static.thenounproject.com/png/2416926-200.png";
 String btnText1="Button One";
@@ -21,6 +22,11 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.purple,
         centerTitle: true,
         title: Text("Emam Shikder"),
+
+        leading: IconButton(
+            onPressed:  () => SlideDrawer.of(context)!.toggle(),
+            icon: Icon(Icons.menu_outlined)
+        ),
 
       ),
 
