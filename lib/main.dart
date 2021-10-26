@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:emam_demo/my_home_page.dart';
 import 'package:emam_demo/second_page.dart';
+import 'package:emam_demo/third_page.dart';
 import 'package:flutter/material.dart';
 import 'package:slide_drawer/slide_drawer.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       home:SlideDrawer(
         backgroundColor: Colors.purpleAccent,
-        offsetFromRight: 300,
+        offsetFromRight: 100,
         rotateAngle: pi/34,
         curve: Curves.decelerate,
 
@@ -35,7 +36,12 @@ class MyApp extends StatelessWidget {
               },
               icon: Icons.visibility),
           MenuItem('Third Page',
-              onTap: (){},
+              onTap: (){
+                navigatorKey.currentState!.push(
+                    MaterialPageRoute(builder: (context)=>ThirdPage())
+                );
+              },
+
               icon: Icons.ac_unit),
           MenuItem('Profile',
               onTap: (){},
