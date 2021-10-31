@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class ThirdPage extends StatefulWidget {
@@ -12,6 +10,7 @@ class ThirdPage extends StatefulWidget {
 final _formKey=GlobalKey<FormState>();
 TextEditingController emailController= TextEditingController();
 TextEditingController passController= TextEditingController();
+bool passVisi=true;
 
 class _ThirdPageState extends State<ThirdPage> {
   @override
@@ -32,6 +31,7 @@ class _ThirdPageState extends State<ThirdPage> {
           ),
           child: Column(
             children: [
+              Text("Log in", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
               TextFormField(
                 controller: emailController,
                 decoration: InputDecoration(
@@ -51,14 +51,15 @@ class _ThirdPageState extends State<ThirdPage> {
                 controller: passController,
                 decoration: InputDecoration(
                   hintText: "Enter Your Password",
+
                   hintStyle: TextStyle(color: Colors.pink),
                   contentPadding: EdgeInsets.all(8),
                   focusColor: Colors.blue,
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.limeAccent),
+                    borderSide: BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  suffixIcon: Icon(Icons.attach_email,
+                  suffixIcon: Icon(Icons.remove_red_eye,
                       color: Colors.teal),
                 ),
               ),
